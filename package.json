@@ -1,0 +1,19 @@
+{
+  "name": "better-bets",
+  "version": "1.0.0",
+  "description": "A website for keeping track of bets and predictions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PVFractal/better-bets.git"
+  },
+  "author": "Peter Vahlberg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PVFractal/better-bets/issues"
+  },
+  "homepage": "https://github.com/PVFractal/better-bets#readme"
+}
