@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Login() {
+function CreateAccount() {
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
@@ -47,7 +47,7 @@ function Login() {
         </div>
         <button type="submit" className='Button' style={ { marginTop: '5px' } }>Login</button>
         <div style={{marginTop: '25px'}}>
-            <Link to='/create-account' className='LinkButton' style={ { marginRight: '15%' } }>Create Account</Link>
+            <Link to='/' className='LinkButton' style={ { marginRight: '15%' } }>Create Account</Link>
             <Link to='/' className='LinkButton'>Forgot Login</Link>
         </div>
         
@@ -56,4 +56,4 @@ function Login() {
   );
 };
 
-export default Login;
+export default CreateAccount;
