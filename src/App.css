@@ -53,3 +53,7 @@
 .Button:hover {
   background-color: rgb(198, 205, 212);
 }
+
+.LinkButton {
+  font-size: larger;
+}
