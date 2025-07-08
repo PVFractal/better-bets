@@ -46,10 +46,11 @@ function Login() {
           />
         </div>
         <button type="submit" className='Button' style={ { marginTop: '5px' } }>Login</button>
-
-        <div className='LinkButton' style={{marginTop: '25px'}}>
-          <Link to='/'>Create Account</Link>
+        <div style={{marginTop: '25px'}}>
+            <Link to='/' className='LinkButton' style={ { marginRight: '20%' } }>Create Account</Link>
+            <Link to='/' className='LinkButton'>Forgot Login</Link>
         </div>
+        
       </form>
     </div>
   );
