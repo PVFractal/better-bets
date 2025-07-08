@@ -20,3 +20,13 @@
   text-underline-position: above;
   color:rgb(125, 121, 255);
 }
+
+.Login {
+  margin-top: 10%;
+  margin-right: 30%;
+  margin-left: 30%;
+  padding: 50px 50px;
+  border: 2px solid rgb(18, 17, 36);
+  background-color: rgb(232, 232, 239);
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.254);
+}
