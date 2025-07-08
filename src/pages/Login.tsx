@@ -26,7 +26,7 @@ function Login() {
       </header>
       <form onSubmit={handleSubmit} className='Login'>
         <h2>Login</h2>
-        <div>
+        <div className='Entry'>
           <label htmlFor="username">Username:</label>
           <input
             type="text"
@@ -35,7 +35,7 @@ function Login() {
             onChange={(e) => setUsername(e.target.value)}
           />
         </div>
-        <div>
+        <div className='Entry'>
           <label htmlFor="password">Password:</label>
           <input
             type="password"
@@ -44,7 +44,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" className='Button' style={ { marginTop: '5px' } }>Login</button>
       </form>
     </div>
   );
