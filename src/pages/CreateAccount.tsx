@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { Validator } from '../code/Validator';
 
 function CreateAccount() {
   const [username, setUsername] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [confirmPassword, setConfirmPassword] = useState<string>('');
   const [width, setWidth] = useState<string>('auto');
+  const [errorMsg, setErrorMsg] = useState<string>('');
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    // Implement authentication logic here (e.g., API call)
-    console.log('Logging in with:', username, password);
-    // On successful login, store token and redirect
+
+    // Validation
+    setErrorMsg(Validator.validateCreateAccount(username, email, password, confirmPassword));
+    if (errorMsg.length > 0) {
+      return;
+    }
   };
 
   useEffect(() => {
@@ -89,12 +95,15 @@ function CreateAccount() {
           <input
             type="password"
             id="confirm-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
         </div>
         <button type="submit" className='Button' style={ { marginTop: '5px' } }>Create Account</button>
+        <div className='ErrorMessage'>
+          <h3>{errorMsg}</h3>
+        </div>
       </form>
     </div>
   );

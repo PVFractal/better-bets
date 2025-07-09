@@ -56,3 +56,7 @@
 .LinkButton {
   font-size: larger;
 }
+
+.ErrorMessage {
+  color: red;
+}
