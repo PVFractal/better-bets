@@ -5,9 +5,6 @@ import { UserModel } from "../model/UserModel";
 import * as bcrypt from 'bcrypt';
 
 export class UsersDAO {
-  
-  // Number of salt rounds for encryption
-  private static SALT_ROUNDS = 10;
 
   /**
    * Save user to "Users" table.
@@ -27,14 +24,11 @@ export class UsersDAO {
       const newUser = new UserModel();
       newUser.username = username;
       newUser.email = email;
-
+      
       // Encrypting the password
-      bcrypt.hash(password, UsersDAO.SALT_ROUNDS, (err, hash) => {
-        if (err) {
-          console.error('Error hashing password:', err);
-          return Promise.reject(err);
-        }
-        newUser.passwordHash = hash;
+      const salt = await bcrypt.genSalt(10);
+      await bcrypt.hash(password, salt).then((result: string) => {
+        newUser.passwordHash = result;
       });
 
       await mapper

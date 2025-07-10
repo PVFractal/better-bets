@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Validator } from '../code/Validator';
 import { UsersDAO } from '../code';
-import dotenv from 'dotenv'; 
 
 function CreateAccount() {
   const [username, setUsername] = useState<string>('');
@@ -20,16 +19,12 @@ function CreateAccount() {
       return;
     }
 
-    
-    dotenv.config();
     const region = process.env.AWS_REGION;
 
     if (!region) {
-      console.error('No region found in environment')
+      console.log('No region environment variable found')
       return;
     }
-
-    console.log('Region: ', region)
 
     const userDAO = new UsersDAO();
     userDAO.createUser(region, username, email, password).catch(e => {
